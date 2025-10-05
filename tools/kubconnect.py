@@ -1,5 +1,8 @@
 import json
 from typing import Dict, Any, Union
+import os
+import shutil  # also needed if you use shutil.copyfileobj
+
 
 # Import Kubernetes client components, though they are skipped in demo_mode
 try:
@@ -70,11 +73,11 @@ def execute_k8s_query(
 
     method_name = "" # Initialize for use in the final except block
     try:
+        CONFIG_FILE_PATH="tmp/uploads/config
         if not os.path.exists(CONFIG_FILE_PATH):
             print(f"[ERROR] Config file does not exist at: {CONFIG_FILE_PATH}")
         else:
             print(f"[INFO] Config file exists, loading: {CONFIG_FILE_PATH}")
-        config.load_kube_config(config_file=CONFIG_FILE_PATH)
 
         # 1. Load configuration (ideally, do this once outside the function)
         config.load_kube_config(config_file="tmp/uploads/config")
