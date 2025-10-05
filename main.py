@@ -29,7 +29,7 @@ app.add_middleware(
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # --- MODIFIED CONSTANTS ---
-UPLOAD_DIR = "uploads"
+UPLOAD_DIR = "/tmp/uploads"
 CONFIG_FILENAME = "config" # The constant name for the uploaded file
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 CONFIG_FILE_PATH = os.path.join(UPLOAD_DIR, CONFIG_FILENAME)
@@ -85,6 +85,8 @@ async def upload_file(file: UploadFile = File(...), session_id: str = Form(...))
             # Important: Ensure the file pointer is at the beginning before copying
             await file.seek(0) 
             shutil.copyfileobj(file.file, buffer)
+
+        print(f"[UPLOAD] File saved at: {file_path}")
             
         # Optional: Store simple confirmation data in session_data (if still needed)
         if session_id not in session_data:
