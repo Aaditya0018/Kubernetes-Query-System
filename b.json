@@ -1,0 +1,36 @@
+{
+    "id": "chatcmpl-57ec1961-57a4-4599-86ba-eec8ccb58ba5",
+    "choices": [
+        {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "Hello! 👋 How can I assist you today?",
+                "reasoning": "The user says \"Hello!\" Simple greeting. Need to respond friendly, ask how can help.",
+                "tool_calls": null
+            },
+            "logprobs": null
+        }
+    ],
+    "created": 1759562447,
+    "model": "gpt-oss-120b",
+    "object": "chat.completion",
+    "system_fingerprint": "fp_8a8c0bd8448557718491",
+    "time_info": {
+        "completion_time": 0.024569714,
+        "prompt_time": 0.00207465,
+        "queue_time": 0.020514705,
+        "total_time": 0.04922604560852051,
+        "created": 1759562447
+    },
+    "usage": {
+        "completion_tokens": 40,
+        "prompt_tokens": 69,
+        "prompt_tokens_details": {
+            "cached_tokens": 0
+        },
+        "total_tokens": 109
+    },
+    "service_tier": null
+}

@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+kubernetes
+python-dotenv # for local testing
+fastmcp
+cerebras_cloud_sdk
+langchain-cerebras
+langchain

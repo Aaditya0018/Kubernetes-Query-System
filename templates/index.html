@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes Query System</title>
+    <link rel="stylesheet" href="/static/style.css?v=2">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <span class="k8s-icon">☸</span> Kubernetes Query System
+            </div>
+            <div class="tagline">
+                Kubernetes | Docker | Cloud Native | CI/CD Pipeline
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Welcome Card -->
+            <div class="welcome-card">
+                <h1 class="welcome-title">Welcome to the Future of DevOps</h1>
+                <p class="welcome-text">
+                    Upload your kube config file and query them instantly with our intelligent K8s-native analysis system. 
+                    Powered by cutting-edge technology for seamless DevOps workflows.
+                </p>
+            </div>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                ✅ File uploaded successfully!
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <h2 class="section-title">Upload Your File</h2>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+                        <div class="upload-icon">📁</div>
+                        <p>Click or drag your file here</p>
+                        <p style="color: #00f5ff; font-size: 0.9rem;">Supports YAML, JSON, TXT, LOG, and more</p>
+                        <input type="file" id="fileInput" name="file" class="file-input" onchange="uploadFile()">
+                    </div>
+                </form>
+            </div>
+
+            <!-- File Details -->
+            <div class="file-details" id="fileDetails">
+                <h2 class="section-title">File Information</h2>
+                <div class="file-info-grid">
+                    <div class="file-info-item">
+                        <div class="file-info-label">File Name</div>
+                        <div class="file-info-value" id="fileName">-</div>
+                    </div>
+                    <div class="file-info-item">
+                        <div class="file-info-label">File Type</div>
+                        <div class="file-info-value" id="fileType">-</div>
+                    </div>
+                    <div class="file-info-item">
+                        <div class="file-info-label">File Size</div>
+                        <div class="file-info-value" id="fileSize">-</div>
+                    </div>
+                    <div class="file-info-item">
+                        <div class="file-info-label">Upload Time</div>
+                        <div class="file-info-value" id="uploadTime">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Container -->
+            <div class="chat-container" id="chatContainer">
+                <div class="chat-header">
+                    <h2 class="section-title">Conversation</h2>
+                       <button class="clear-btn" onclick="clearHistory()" id="clearBtn">
+                            🗑️ Clear History & Files
+                        </button>
+                </div>
+                
+                <!-- Chat Messages Area -->
+                <div class="chat-messages" id="chatMessages">
+                    <div class="empty-chat-state">
+                        <div class="empty-icon">💬</div>
+                        <p>Start a conversation by asking a question about your uploaded file</p>
+                    </div>
+                </div>
+
+                <!-- Query Input Section -->
+                <div class="chat-input-section">
+                    <textarea id="queryInput" class="query-input" placeholder="Ask a question about your file..." rows="3"></textarea>
+                    <div class="chat-actions">
+                        <button class="ask-btn" onclick="submitQuery()" id="askBtn">
+                            <span id="btnText">Ask Question 🚀</span>
+                            <span class="btn-loader" id="btnLoader"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
