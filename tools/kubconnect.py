@@ -73,7 +73,7 @@ def execute_k8s_query(
 
     method_name = "" # Initialize for use in the final except block
     try:
-        CONFIG_FILE_PATH="tmp/uploads/config
+        CONFIG_FILE_PATH="tmp/uploads/config"
         if not os.path.exists(CONFIG_FILE_PATH):
             print(f"[ERROR] Config file does not exist at: {CONFIG_FILE_PATH}")
         else:
