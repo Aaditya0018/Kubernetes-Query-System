@@ -70,6 +70,12 @@ def execute_k8s_query(
 
     method_name = "" # Initialize for use in the final except block
     try:
+        if not os.path.exists(CONFIG_FILE_PATH):
+            print(f"[ERROR] Config file does not exist at: {CONFIG_FILE_PATH}")
+        else:
+            print(f"[INFO] Config file exists, loading: {CONFIG_FILE_PATH}")
+        config.load_kube_config(config_file=CONFIG_FILE_PATH)
+
         # 1. Load configuration (ideally, do this once outside the function)
         config.load_kube_config(config_file="tmp/uploads/config")
 
