@@ -71,7 +71,7 @@ def execute_k8s_query(
     method_name = "" # Initialize for use in the final except block
     try:
         # 1. Load configuration (ideally, do this once outside the function)
-        config.load_kube_config(config_file="uploads/config")
+        config.load_kube_config(config_file="tmp/uploads/config")
 
         resource_map = get_api_map_from_csv()
         resource_type_lower = resource_type.lower()
